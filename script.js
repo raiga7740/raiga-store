@@ -1,4 +1,5 @@
 const whatsappNumber = "6281234567890";
+const discordOrderUrl = "https://discord.gg/xw4CvTeayV";
 const siteUrl = "https://domain.com";
 
 const products = [
@@ -120,6 +121,17 @@ const products = [
     prices: [
       { paket: "1 Bulan", harga: "18K" },
       { paket: "3 Bulan", harga: "48K" }
+    ]
+  },
+  {
+    id: "alight",
+    slug: "alight-motion",
+    category: "editing",
+    name: "Alight Motion Premium",
+    image: "assets/alightmotion.png",
+    desc: "Nikmati fitur editing premium, template pro, dan export video tanpa batas.",
+    prices: [
+      { paket: "1 Tahun", harga: "6K" }
     ]
   }
 ];
@@ -272,6 +284,7 @@ const detailPriceList = document.getElementById("detailPriceList");
 const checkoutName = document.getElementById("checkoutName");
 const checkoutPrice = document.getElementById("checkoutPrice");
 const checkoutBtn = document.getElementById("checkoutBtn");
+const discordCheckoutBtn = document.getElementById("discordCheckoutBtn");
 const accountInput = document.getElementById("accountInput");
 const detailMetaDesc = document.getElementById("detailMetaDesc");
 const detailOgTitle = document.getElementById("detailOgTitle");
@@ -403,7 +416,7 @@ if (detailTitle) {
     detailDesc.textContent = product.desc;
 
     const pageTitle = `${product.name} Premium Murah - RaigaStore`;
-    const pageDesc = `Beli ${product.name} premium di RaigaStore. Pilih paket langganan, isi akun atau email, lalu order cepat via WhatsApp.`;
+    const pageDesc = `Beli ${product.name} premium di RaigaStore. Pilih paket langganan, isi akun atau email, lalu order cepat via WhatsApp atau Discord.`;
     const canonicalUrl = getAbsoluteProductUrl(product);
 
     document.title = pageTitle;
@@ -434,6 +447,7 @@ if (detailTitle) {
 
       const message = `Halo kak, saya mau order ${product.name} paket ${item.paket} harga ${item.harga}`;
       checkoutBtn.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+      if (discordCheckoutBtn) discordCheckoutBtn.href = discordOrderUrl;
     }
 
     detailPriceList.innerHTML = "";
@@ -471,6 +485,12 @@ Akun/Email: ${akun || "-"}`;
 
       checkoutBtn.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
     });
+
+    if (discordCheckoutBtn) {
+      discordCheckoutBtn.addEventListener("click", () => {
+        discordCheckoutBtn.href = discordOrderUrl;
+      });
+    }
   } else {
     document.title = "Produk Tidak Ditemukan - RaigaStore";
     detailTitle.textContent = "Produk Tidak Ditemukan";
@@ -481,6 +501,10 @@ Akun/Email: ${akun || "-"}`;
     checkoutPrice.textContent = "Rp 0";
     checkoutBtn.removeAttribute("href");
     checkoutBtn.setAttribute("aria-disabled", "true");
+    if (discordCheckoutBtn) {
+      discordCheckoutBtn.removeAttribute("href");
+      discordCheckoutBtn.setAttribute("aria-disabled", "true");
+    }
     setMetaContent('meta[name="robots"]', { name: "robots" }, "noindex, follow");
   }
 }
