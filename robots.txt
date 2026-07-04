@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /*?id=
+Disallow: /*?admin=
+Disallow: /*?debug=
+
+Sitemap: https://domain.com/sitemap.xml
