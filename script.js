@@ -208,6 +208,30 @@ const products = [
       { paket: "Private 1 Bulan", harga: "6K" },
       { paket: "Private 1 Bulan", harga: "10K" }
     ]
+  },
+  {
+    id: "remini",
+    slug: "remini-premium",
+    category: "editing",
+    name: "Remini",
+    image: "assets/remini.png",
+    desc: "Aplikasi penyunting foto dan video yang menggunakan teknologi kecerdasan buatan (AI).",
+    prices: [
+      { paket: "Private 7 Hari", harga: "6K" },
+      { paket: "Private 1 Bulan", harga: "10K" }
+    ]
+  },
+  {
+    id: "picsart",
+    slug: "picsart-premium",
+    category: "editing",
+    name: "Picsart",
+    image: "assets/picsart.png",
+    desc: "Platform kreatif dan studio desain lengkap yang dilengkapi dengan alat pengeditan foto dan video berbasis AI.",
+    prices: [
+      { paket: "Private 1 Bulan", harga: "6K" },
+      { paket: "Sharing 1 Bulan", harga: "4K" }
+    ]
   }
 ];
 
