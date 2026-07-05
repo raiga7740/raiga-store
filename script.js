@@ -1,4 +1,4 @@
-const whatsappNumber = "6281234567890";
+const whatsappNumber = "6281296674543";
 const discordOrderUrl = "https://discord.gg/xw4CvTeayV";
 const siteUrl = "https://domain.com";
 
@@ -11,8 +11,19 @@ const products = [
     image: "assets/netflix.jpg",
     desc: "Akun premium untuk menonton film, series, dan drama favorit dengan kualitas HD.",
     prices: [
-      { paket: "1 Bulan", harga: "25K" },
-      { paket: "3 Bulan", harga: "60K" }
+      { paket: "Sharing 1 Profile 1 User - 1 Hari", harga: "3K" },
+      { paket: "Sharing 1 Profile 1 User - 3 Hari", harga: "6K" },
+      { paket: "Sharing 1 Profile 1 User - 7 Hari", harga: "10K" },
+      { paket: "Sharing 1 Profile 1 User - 1 Bulan", harga: "20K" },
+      { paket: "Sharing 1 Profile 2 User - 1 Hari", harga: "3K" },
+      { paket: "Sharing 1 Profile 2 User - 3 Hari", harga: "6K" },
+      { paket: "Sharing 1 Profile 2 User - 7 Hari", harga: "10K" },
+      { paket: "Sharing 1 Profile 2 User - 1 Bulan", harga: "17K" },
+      { paket: "Semi Private - 1 Hari", harga: "6K" },
+      { paket: "Semi Private - 3 Hari", harga: "10K" },
+      { paket: "Semi Private - 7 Hari", harga: "20K" },
+      { paket: "Semi Private - 1 Bulan", harga: "26K" },
+      { paket: "Private - 1 Bulan", harga: "160K" }
     ]
   },
   {
@@ -23,8 +34,8 @@ const products = [
     image: "assets/capcut.jpg",
     desc: "Nikmati fitur editing premium, template pro, dan export video tanpa batas.",
     prices: [
-      { paket: "1 Bulan", harga: "20K" },
-      { paket: "3 Bulan", harga: "50K" }
+      { paket: "7 Hari", harga: "15K" },
+      { paket: "1 Bulan", harga: "30K" }
     ]
   },
   {
@@ -35,8 +46,9 @@ const products = [
     image: "assets/spotify.jpg",
     desc: "Dengarkan musik tanpa iklan, bisa download lagu, dan kualitas audio lebih baik.",
     prices: [
-      { paket: "1 Bulan", harga: "18K" },
-      { paket: "3 Bulan", harga: "45K" }
+      { paket: "Individual Plan 1 Bulan", harga: "30K" },
+      { paket: "Individual Plan 2 Bulan", harga: "37K" },
+      { paket: "Individual Plan 3 Bulan", harga: "50K" },
     ]
   },
   {
@@ -47,8 +59,9 @@ const products = [
     image: "assets/discord.jpg",
     desc: "Upgrade Discord kamu dengan boost server, emoji custom, dan fitur premium lainnya.",
     prices: [
-      { paket: "1 Bulan", harga: "35K" },
-      { paket: "3 Bulan", harga: "90K" }
+      { paket: "Nitro Boost Trial 1 Bulan", harga: "20K" },
+      { paket: "Nitro Boost Trial 3 Bulan", harga: "40K" },
+      { paket: "Nitro Boost 1 Bulan", harga: "82K" }
     ]
   },
   {
@@ -59,8 +72,10 @@ const products = [
     image: "assets/viu.png",
     desc: "Nonton drama Korea, anime, dan series Asia tanpa gangguan iklan.",
     prices: [
-      { paket: "1 Bulan", harga: "15K" },
-      { paket: "3 Bulan", harga: "40K" }
+      { paket: "Anlim 1 Bulan", harga: "3K" },
+      { paket: "Anlim 3 Bulan", harga: "7K" },
+      { paket: "Anlim 1 Tahun", harga: "12K" },
+      { paket: "Lifetime", harga: "17K" }
     ]
   },
   {
@@ -71,8 +86,9 @@ const products = [
     image: "assets/youtube.jpg",
     desc: "Nonton YouTube tanpa iklan, background play, dan akses YouTube Music.",
     prices: [
-      { paket: "1 Bulan", harga: "20K" },
-      { paket: "3 Bulan", harga: "55K" }
+      { paket: "Family Plan 1 Bulan", harga: "5K" },
+      { paket: "Individual Plan 1 Bulan", harga: "6K" },
+      { paket: "Family Head 1 Bulan", harga: "8K" }
     ]
   },
   {
@@ -83,8 +99,10 @@ const products = [
     image: "assets/iqiyi.jpg",
     desc: "Streaming drama, anime, dan film Asia dengan akses VIP.",
     prices: [
-      { paket: "1 Bulan", harga: "15K" },
-      { paket: "3 Bulan", harga: "38K" }
+      { paket: "Sharing 1 Bulan Standard", harga: "8K" },
+      { paket: "Sharing 1 Tahun Standard", harga: "20K" },
+      { paket: "Sharing 1 Bulan Premium", harga: "12K" },
+      { paket: "Sharing 1 Tahun Premium", harga: "25K" }
     ]
   },
   {
@@ -95,8 +113,8 @@ const products = [
     image: "assets/bstation.jpg",
     desc: "Nonton anime dan konten eksklusif Bstation dengan fitur premium.",
     prices: [
-      { paket: "1 Bulan", harga: "15K" },
-      { paket: "3 Bulan", harga: "35K" }
+      { paket: "Sharing 1 Bulan", harga: "8K" },
+      { paket: "Sharing 1 Tahun", harga: "20K" }
     ]
   },
   {
@@ -107,8 +125,10 @@ const products = [
     image: "assets/disney.jpg",
     desc: "Nonton film Disney, Marvel, Pixar, Star Wars, dan series populer lainnya.",
     prices: [
-      { paket: "1 Bulan", harga: "25K" },
-      { paket: "3 Bulan", harga: "65K" }
+      { paket: "1 Hari 6 User", harga: "8K" },
+      { paket: "7 Hari 6 User", harga: "15K" },
+      { paket: "1 Bulan 6 User", harga: "35K" },
+      { paket: "3 Bulan 6 User", harga: "45K" }
     ]
   },
   {
@@ -119,8 +139,9 @@ const products = [
     image: "assets/apple.jpg",
     desc: "Streaming jutaan lagu premium dengan kualitas audio yang jernih.",
     prices: [
-      { paket: "1 Bulan", harga: "18K" },
-      { paket: "3 Bulan", harga: "48K" }
+      { paket: "Individual Plan 1 Bulan", harga: "10K" },
+      { paket: "Family Plan 1 Bulan", harga: "5K" },
+      { paket: "Family Head 1 Bulan", harga: "10K" }
     ]
   },
   {

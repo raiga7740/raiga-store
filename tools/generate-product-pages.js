@@ -1,3 +1,6 @@
+// node tools/generate-product-pages.js // 
+// Untuk otomatis generate produk jalankan di terminal //
+
 const fs = require("fs");
 const path = require("path");
 
