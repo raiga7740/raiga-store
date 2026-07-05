@@ -154,11 +154,67 @@ const products = [
     prices: [
       { paket: "1 Tahun", harga: "6K" }
     ]
+  },
+  {
+    id: "vidio",
+    slug: "vidio-premium",
+    category: "streaming",
+    name: "Video Premium",
+    image: "assets/vidio.png",
+    desc: "Nikmati streaming dengan kualitas yang HD.",
+    prices: [
+      { paket: "Sharing 1 Bulan Mobile", harga: "20K" },
+      { paket: "Sharing 1 Bulan All Device", harga: "25K" },
+      { paket: "Private 1 Tahun TV", harga: "10K" },
+      { paket: "Private 1 Bulan Mobile", harga: "35K" },
+      { paket: "Private 1 Bulan All Device", harga: "42K" }
+    ]
+  },
+  {
+    id: "wetv",
+    slug: "wetv-vip",
+    category: "streaming",
+    name: "WeTV VIP",
+    image: "assets/wetv.jpg",
+    desc: "Menyediakan berbagai tayangan hiburan Asia dengan dukungan subtitle bahasa Indonesia.",
+    prices: [
+      { paket: "Sharing 1 Bulan 3 User", harga: "17K" },
+      { paket: "Sharing 1 Bulan 6 User", harga: "12K" },
+      { paket: "Private 1 Bulan 8 User", harga: "8K" },
+      { paket: "Private 1 Bulan", harga: "35K" }
+    ]
+  },
+  {
+    id: "canva",
+    slug: "canva-pro",
+    category: "editing",
+    name: "Canva",
+    image: "assets/canva.png",
+    desc: "Platform desain dan publikasi visual online yang memungkinkan siapa saja untuk membuat berbagai konten kreatif dengan mudah.",
+    prices: [
+      { paket: "Member 1 Bulan", harga: "5K" },
+      { paket: "Admin 1 Bulan", harga: "10K" },
+      { paket: "Owner 1 Bulan", harga: "15K" }
+    ]
+  },
+  {
+    id: "wink",
+    slug: "wink-premium",
+    category: "editing",
+    name: "Wink",
+    image: "assets/wink.png",
+    desc: "Aplikasi penyunting foto dan video berbasis kecerdasan buatan (AI) yang populer untuk meningkatkan kualitas visual.",
+    prices: [
+      { paket: "Private 1 Bulan", harga: "6K" },
+      { paket: "Private 1 Bulan", harga: "10K" }
+    ]
   }
 ];
 
 const productGrid = document.getElementById("productGrid");
 const searchInput = document.getElementById("searchInput");
+const categoryFilter = document.getElementById("categoryFilter");
+let activeCategory = "all";
 
 function formatHarga(harga) {
   return `Rp ${harga.replace("K", ".000")}`;
@@ -239,10 +295,68 @@ function getMinPrice(prices) {
   }, prices[0]);
 }
 
+function getCategoryLabel(category) {
+  const labels = {
+    all: "Semua",
+    community: "Komunitas",
+    editing: "Editing",
+    music: "Musik",
+    streaming: "Streaming"
+  };
+
+  return labels[category] || category.replace(/-/g, " ");
+}
+
+function getProductCategories() {
+  return ["all", ...new Set(products.map(product => product.category))];
+}
+
+function getFilteredProducts() {
+  const keyword = searchInput ? searchInput.value.trim().toLowerCase() : "";
+
+  return products.filter((product) => {
+    const matchesCategory = activeCategory === "all" || product.category === activeCategory;
+    const matchesKeyword = product.name.toLowerCase().includes(keyword);
+
+    return matchesCategory && matchesKeyword;
+  });
+}
+
+function applyProductFilters() {
+  renderProducts(getFilteredProducts());
+}
+
+function renderCategoryFilter() {
+  if (!categoryFilter) return;
+
+  categoryFilter.innerHTML = "";
+
+  getProductCategories().forEach((category) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = `category-chip ${category === activeCategory ? "active" : ""}`;
+    button.textContent = getCategoryLabel(category);
+    button.setAttribute("aria-pressed", category === activeCategory ? "true" : "false");
+
+    button.addEventListener("click", () => {
+      activeCategory = category;
+      renderCategoryFilter();
+      applyProductFilters();
+    });
+
+    categoryFilter.appendChild(button);
+  });
+}
+
 function renderProducts(data) {
   if (!productGrid) return;
 
   productGrid.innerHTML = "";
+
+  if (data.length === 0) {
+    productGrid.innerHTML = '<p class="empty-products">Produk tidak ditemukan.</p>';
+    return;
+  }
 
   data.forEach((product) => {
     const card = document.createElement("a");
@@ -271,18 +385,11 @@ function renderProducts(data) {
 }
 
 if (searchInput) {
-  searchInput.addEventListener("keyup", () => {
-    const keyword = searchInput.value.toLowerCase();
-
-    const filteredProducts = products.filter((product) =>
-      product.name.toLowerCase().includes(keyword)
-    );
-
-    renderProducts(filteredProducts);
-  });
+  searchInput.addEventListener("input", applyProductFilters);
 }
 
-renderProducts(products);
+renderCategoryFilter();
+applyProductFilters();
 
 document.addEventListener("click", (event) => {
   const link = event.target.closest('a[href*="product/"]');
