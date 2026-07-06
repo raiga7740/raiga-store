@@ -1,6 +1,6 @@
 const whatsappNumber = "6281296674543";
 const discordOrderUrl = "https://discord.gg/xw4CvTeayV";
-const siteUrl = "https://domain.com";
+const siteUrl = "https://www.raiga.my.id";
 
 const products = [
   {
@@ -257,11 +257,7 @@ function getAbsoluteProductUrl(product) {
 }
 
 function getRelatedProductUrl(product) {
-  if (window.location.pathname.includes("/product/")) {
-    return `../${product.slug}`;
-  }
-
-  return getProductUrl(product);
+  return `/${getProductUrl(product)}`;
 }
 
 function getAssetUrl(path) {
