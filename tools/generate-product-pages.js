@@ -79,7 +79,7 @@ function updateIndexNoscript(indexHtml, products) {
 function buildSitemap(products) {
   const today = new Date().toISOString().slice(0, 10);
   const homeUrl = `  <url>
-    <loc>https://domain.com/</loc>
+    <loc>https://www.raiga.my.id/</loc>
     <lastmod>${today}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -90,7 +90,7 @@ function buildSitemap(products) {
       const priority = index < 5 ? "0.9" : "0.8";
 
       return `  <url>
-    <loc>https://domain.com/product/${product.slug}</loc>
+    <loc>https://www.raiga.my.id/product/${product.slug}</loc>
     <lastmod>${today}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>${priority}</priority>
