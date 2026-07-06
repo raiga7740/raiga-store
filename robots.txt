@@ -4,4 +4,4 @@ Disallow: /*?id=
 Disallow: /*?admin=
 Disallow: /*?debug=
 
-Sitemap: https://www.raiga.my.id/sitemap.xml
+Sitemap: https://www.raiga.my.id/raigastore-sitemap.xml
