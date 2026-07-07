@@ -783,44 +783,110 @@ a {
 /* =============== FOOTER =============== */
 
 footer {
-  padding: 34px;
-  color: var(--ink-soft);
-  border-top: 2px dashed var(--line-strong);
   background: var(--paper-raised);
-  font-family: var(--font-mono);
-  font-size: 13px;
+  border-top: 2px dashed var(--line-strong);
+  padding: 50px 8% 25px;
 }
 
-.footer-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 24px;
-  max-width: 1120px;
-  margin: 0 auto 22px;
-  text-align: left;
+.footer-content{
+    max-width:1200px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    gap:60px;
+
+    align-items:flex-start;
 }
 
-.footer-content strong {
-  display: block;
-  margin-bottom: 8px;
-  color: var(--ink);
-  font-family: var(--font-display);
-  text-transform: uppercase;
+.footer-content strong{
+    display:block;
+    margin-bottom:14px;
+
+    font-family:var(--font-display);
+    font-size:20px;
+    color:var(--ink);
 }
 
-.footer-links {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
+.footer-content p{
+    color:var(--ink-soft);
+    line-height:1.8;
+    font-size:15px;
 }
 
-.footer-links a {
-  color: var(--ink);
-  text-decoration: none;
-  font-weight: 700;
+.footer-links{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
 }
 
+.footer-links a{
+    text-decoration:none;
+    color:var(--ink);
+    font-weight:600;
+    transition:.25s;
+}
+
+.footer-links a:hover{
+    color:var(--stamp);
+}
+
+.social-links{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+}
+
+.social-btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+
+    padding:12px 18px;
+
+    border-radius:14px;
+
+    text-decoration:none;
+
+    color:#fff;
+    font-weight:700;
+
+    transition:.25s;
+}
+
+.social-btn svg{
+    width:20px;
+    height:20px;
+}
+
+.social-btn.discord{
+    background:#5865F2;
+}
+
+.social-btn.discord:hover{
+    background:#4752C4;
+    transform:translateY(-3px);
+}
+
+.social-btn.whatsapp{
+    background:#25D366;
+}
+
+.social-btn.whatsapp:hover{
+    background:#1EBE5D;
+    transform:translateY(-3px);
+}
+
+footer>p{
+    margin-top:35px;
+    padding-top:20px;
+    border-top:1px solid var(--line);
+
+    text-align:center;
+
+    color:var(--ink-soft);
+}
 /* =============== SOCIAL LINKS =============== */
 
 .social-links {
